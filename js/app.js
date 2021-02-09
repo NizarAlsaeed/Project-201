@@ -4,7 +4,6 @@ function start() {
   let userName = prompt('Enter your name');
   alert('Let\'s start, ' + userName);
   let q1 = prompt('i am +25 years old \n Y or N').toLowerCase();
-  console.log(q1);
   switch (q1) {
   case q1 = 'y':
   case q1 = 'yes':
