@@ -17,7 +17,9 @@ h1{
 article{
     font-family: 'Courier New', Courier, monospace;
 }
-
+ul li{
+    padding-top: 5px;
+}
 button{
     
     width: 40%;
@@ -33,4 +35,18 @@ button{
 
 button:hover{
     cursor: pointer;
+}
+h3{
+    font-family: 'Courier New', Courier, monospace;
+}
+ol{
+    width: 10%;
+    margin: 0 auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+
+}
+ol li{
+    padding:  5px 0px;
+    text-align: center;
 }
