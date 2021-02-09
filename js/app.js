@@ -40,7 +40,7 @@ function start() {
   let q4 = prompt('I live in Amman \n Y or N').toLowerCase();
   if (q4 === 'y' || q4 === 'yes')
     console.log('You are Right');
-  else if (q2 === 'n' || q4 === 'no')
+  else if (q4 === 'n' || q4 === 'no')
     console.log('not exactly');
   else
     alert('You can answer either yes / y or no / n only');
