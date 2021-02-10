@@ -1,10 +1,10 @@
 'use strict';
-//this function is called by the button in the html file using onclick attribute
-function start() {
-  let score=0;
+let score=0; //global variable
+
+function start() {//this function is called by the button in the html file using onclick attribute
   let userName = prompt('Enter your name');
   alert('Let\'s start, ' + userName);
- 
+
   question1();
   question2();
   question3();
@@ -12,16 +12,8 @@ function start() {
   question5();
   question6();
   question7();
-
-  //---------------------------------Lab-03-----------------------------------------------
-
-  
-
-  // Question 7..........................
-
-  
-  
 }
+
 function question1(){
   let q1 = prompt('i am +25 years old \n Y or N').toLowerCase();
   switch (q1) {
@@ -40,6 +32,7 @@ function question1(){
     alert('You can answer either yes / y or no / n only');
   }
 }
+
 function question2(){
   let q2 = prompt('I like Liverbool \n Y or N').toLowerCase();
   if (q2 === 'y' || q2 === 'yes'){
@@ -50,87 +43,81 @@ function question2(){
   }else{
     alert('You can answer either yes / y or no / n only');
   }
-    
-  function question3(){
-    let q3 = prompt('I\'ve never travelled outside Jordan \n Y or N').toLowerCase();
-    if (q3 === 'n' || q3 === 'no'){
-      console.log('You are Right');
-      score++;}
-    else if(q3 === 'y' || q3 === 'yes')
-      console.log('not exactly');
-    else
-      alert('You can answer either yes / y or no / n only');
+}
+function question3(){
+  let q3 = prompt('I\'ve never travelled outside Jordan \n Y or N').toLowerCase();
+  if (q3 === 'n' || q3 === 'no'){
+    console.log('You are Right');
+    score++;}
+  else if(q3 === 'y' || q3 === 'yes')
+    console.log('not exactly');
+  else
+    alert('You can answer either yes / y or no / n only');
+}
+
+function question4(){
+  let q4 = prompt('I live in Amman \n Y or N').toLowerCase();
+  if (q4 === 'y' || q4 === 'yes'){
+    console.log('You are Right');
+    score++;}
+  else if (q4 === 'n' || q4 === 'no')
+    console.log('not exactly');
+  else
+    alert('You can answer either yes / y or no / n only');
+}
+
+function question5(){
+  let q5 = prompt('My laptop brand is hp \n Y or N').toLowerCase();
+  if (q5 === 'n' || q5 === 'no'){
+    console.log('You are Right');
+    score++;}
+  else if (q5 === 'y' || q5 === 'yes')
+    console.log('not exactly');
+  else
+    alert('You can answer either yes / y or no / n only');
+  alert('It is a lot of fun! \ni want you to guess a number in my head ');
+}
+
+function question6(){
+  const HDNUM = 6;
+  let q6, attempts=4, correct=false;
+  while(attempts && !correct){
+    q6 = parseInt(prompt('guess a number between 0 and 10 \nyou have only '+attempts+' attempts'));
+    if (!(q6>=0 && q6<=10))
+      alert('please enter a number between 0 and 10');
+    if (q6 === HDNUM){
+      alert('Correct answer, Good job');
+      correct=true;
+      score++;
+      break;}
+    else if (Math.abs(q6-HDNUM)>=5)
+      alert('too far');
+    else if (Math.abs(q6-HDNUM)>=3)
+      alert('far');
+    else if (Math.abs(q6-HDNUM)>=2)
+      alert('somehow close');
+    else if (Math.abs(q6-HDNUM)>=1)
+      alert('too close!');
+    attempts-=1;
   }
-  function question4(){let q4 = prompt('I live in Amman \n Y or N').toLowerCase();
-    if (q4 === 'y' || q4 === 'yes'){
-      console.log('You are Right');
-      score++;}
-    else if (q4 === 'n' || q4 === 'no')
-      console.log('not exactly');
-    else
-      alert('You can answer either yes / y or no / n only');}
-      
-  function question5(){let q5 = prompt('My laptop brand is hp \n Y or N').toLowerCase();
-    if (q5 === 'n' || q5 === 'no'){
-      console.log('You are Right');
-      score++;}
-    else if (q5 === 'y' || q5 === 'yes')
-      console.log('not exactly');
-    else
-      alert('You can answer either yes / y or no / n only');
-    
-    alert('It is a lot of fun! \ni want you to guess a number in my head ');
-  }
-    
-  function question6(){const HDNUM = 6;
-    let q6, attempts=4, correct=false;
-    while(attempts && !correct){
-      q6 = parseInt(prompt('guess a number between 0 and 10 \nyou have only '+attempts+' attempts'));
-      if (!(q6>=0 && q6<=10))
-        alert('please enter a number between 0 and 10');
-      if (q6 === HDNUM){
+  if (!attempts)
+    alert('sorry, your are out of attempts\n the answer is '+HDNUM);}
+
+function question7(){alert('now moving to quiz # 7\n guess any movie from my movies list');
+  let movies = ['maze the runner','thor','batman','joker','toy story'];
+  let q7,attempts=6,correct=false;
+  while(attempts && !correct){
+    q7 = prompt('guess a movie, you have '+attempts+' attempts').toLowerCase();
+    for(let i = 0; i< movies.length; i++){
+      if(q7 === movies[i]){
         alert('Correct answer, Good job');
         correct=true;
         score++;
         break;}
-      else if (Math.abs(q6-HDNUM)>=5)
-        alert('too far');
-      else if (Math.abs(q6-HDNUM)>=3)
-        alert('far');
-      else if (Math.abs(q6-HDNUM)>=2)
-        alert('somehow close');
-      else if (Math.abs(q6-HDNUM)>=1)
-        alert('too close!');
-      attempts-=1;
     }
-    if (!attempts)
-      alert('sorry, your are out of attempts\n the answer is '+HDNUM);}
-
-  function question7(){alert('now moving to quiz # 7\n guess any movie from my movies list');
-    let movies = ['maze the runner','thor','batman','joker','toy story'];
-    let q7;
-    attempts=6;
-    correct=false;
-    while(attempts && !correct){
-      q7 = prompt('guess a movie, you have '+attempts+' attempts').toLowerCase();
-      for(let i = 0; i< movies.length; i++){
-        if(q7 === movies[i]){
-          alert('Correct answer, Good job');
-          correct=true;
-          score++;
-          break;}
-      }
-      attempts-=1;
-    }
-    if (!attempts)
-      alert('sorry, your are out of attempts\n the list contains: '+movies);
-      
-    alert('Your Score = '+score+' out of 7');
+    attempts-=1;
   }
-
-  
-
-
-
-
-
+  if (!attempts)
+    alert('sorry, your are out of attempts\n the list contains: '+movies);
+  alert('Your Score = '+score+' out of 7');
+}
